@@ -9,7 +9,7 @@
           <div class="col" *ngFor="let coffee of coffees">
             <div class="card">
               <div class="card-body {{coffee.coffeeType}}">
-                <h2 class="coffeeType ">
+                <h2 class="coffeeType">
                   {{coffee.coffeeType}}
                 </h2>
                 <h4>
@@ -68,8 +68,8 @@
         </h3>
         <div class="row" *ngIf="orders.length">
           <div class="col-md-3"  *ngFor="let order of orders;let i = index">
-            <div class="card basket-card">
-              <div class="card-body">
+            <div class="card basket-card"> 
+              <div class="card-body" >
                 <h6>
                   {{order.coffeeType}} - {{order.price}} ₺
                 </h6>
