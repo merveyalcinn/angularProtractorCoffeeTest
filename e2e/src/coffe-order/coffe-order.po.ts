@@ -27,6 +27,14 @@ export class CoffeOrder {
     return element(by.css('.price')).getText();
   }
 
+  clickBuyButton(){
+    element(by.id('buy-button')).click()
+  }
+  
+  acceptAlert(){
+    browser.switchTo().alert().accept();
+  }
+
   getBuyButtonStatus(){
     return element(by.id('buy-button')).isEnabled()
   }

@@ -75,13 +75,19 @@ describe('coffe-order', () => {
     coffeOrder.clickRemoveButton('Chaitea');
     coffeOrder.clickRemoveButton('Chaitea');
     coffeOrder.clickRemoveButton('Americano');
-    expect(coffeOrder.getBuyButtonStatus()).toBe(false)
+    expect(coffeOrder.getBuyButtonStatus()).toBe(false);
 
   })
 
   it(`should display Price: 41 ₺ after adding 1 white, 1 chaitea, 1 americano
    and should disable buy button after clicking buy button and accepting alert`, () => {
-
+    coffeOrder.navigateTo();
+    coffeOrder.clickButton('White');
+    coffeOrder.clickButton('Chaitea');
+    coffeOrder.clickButton('Americano');
+    coffeOrder.clickBuyButton();
+    coffeOrder.acceptAlert();
+    expect(coffeOrder.getBuyButtonStatus()).toBe(false);
   })
 
   it('should display Price: 38 ₺ after adding 1 latte, 1 chaitea, 1 americano', () => {
@@ -91,9 +97,4 @@ describe('coffe-order', () => {
     coffeOrder.clickButton('Americano');
     expect(coffeOrder.getPriceText()).toEqual('Price: 38 ₺');
   })
-
-
-
-
-
 })
